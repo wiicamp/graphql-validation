@@ -1,7 +1,7 @@
 {
   "name": "graphql-validation",
   "version": "1.0.0",
-  "description": "An express.js middleware for validator.js.",
+  "description": "An graphql.js middleware for validator.js.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
