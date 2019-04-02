@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+.vscode
+*.swp
+*~
+*.iml
+.*.haste_cache.*
+.env
+node_modules
+npm-debug.log
