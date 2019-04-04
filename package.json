@@ -7,12 +7,21 @@
     "type": "git",
     "url": "git+https://github.com/havinhthai/graphql-validation.git"
   },
+  "keywords": [
+    "graphql",
+    "validation",
+    "validator",
+    "validate"
+  ],
   "author": "TuiDev",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/havinhthai/graphql-validation/issues"
   },
   "homepage": "https://github.com/havinhthai/graphql-validation#readme",
+  "dependencies": {
+    "validator": "^10.11.0"
+  },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
