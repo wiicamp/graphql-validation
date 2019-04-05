@@ -42,7 +42,7 @@ const resolver = {
         return;
       }
     
-      // Validate success, time to create new post
+      // Validate successfully, time to create new post
     }),
   },
 };
