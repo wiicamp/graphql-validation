@@ -36,6 +36,7 @@ const resolver = {
       validate('content').isLength({ min: 10, max: 20 }),
     ], (parent, args, context, info) => {
       if (context.validateErrors.length > 0) {
+        // Validate failed
         console.log(context.validateErrors); // Do anything with this errors
         
         return;
