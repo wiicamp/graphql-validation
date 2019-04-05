@@ -24,7 +24,7 @@ module.exports = {
     return middleware;
   },
 
-  validate(field) {
+  validate(param) {
     const obj = {
       callbackFuncs: [],
       isNegateNext: false,
@@ -45,12 +45,12 @@ module.exports = {
     validatorKeys.forEach((key) => {
       obj.methods[key] = function (options = {}) {
         const func = (args = {}) => {
-          const validateValue = validatorJS[key](args[field], options);
+          const validateValue = validatorJS[key](args[param], options);
           const isError = !obj.isNegateNext ? !validateValue : validateValue;
 
           if (isError) {
             const validateError = {
-              param: field,
+              param,
               msg: options.msg || 'Invalid value',
             };
 
