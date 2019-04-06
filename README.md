@@ -56,6 +56,7 @@ const resolver = {
 ```javascript
 Input: { title: '', content: 'Hi!' };
 
+// console.log(context.validateErrors);
 Output: [
   { param: 'title', msg: 'Title is required' },
   { param: 'content', msg: 'Invalid value' },
@@ -87,6 +88,7 @@ const resolver = {
 ```javascript
 Input: { data: { title: '', content: 'Hi!' } };
 
+// console.log(context.validateErrors);
 Output: [
   { param: 'title', msg: 'Title is required' },
   { param: 'content', msg: 'Invalid value' },
