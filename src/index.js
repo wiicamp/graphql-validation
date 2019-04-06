@@ -30,7 +30,11 @@ module.exports = {
       isNegateNext: false,
       methods: {
         not() {
-          obj.isNegateNext = true;
+          const func = () => {
+            obj.isNegateNext = true;
+          };
+
+          obj.callbackFuncs.push(func);
 
           return this;
         },
@@ -47,16 +51,16 @@ module.exports = {
     validatorKeys.forEach((key) => {
       obj.methods[key] = function (options = {}) {
         const func = (args = {}) => {
-          const validateValue = validatorJS[key](args[param], options);
-          const isError = !obj.isNegateNext ? !validateValue : validateValue;
+          const validationResult = validatorJS[key](args[param], options);
+          const isError = !obj.isNegateNext ? !validationResult : validationResult;
 
           if (isError) {
-            const validateError = {
+            const validationError = {
               param,
               msg: options.msg || 'Invalid value',
             };
 
-            errors.push(validateError);
+            errors.push(validationError);
 
             obj.isNegateNext = false;
           }
