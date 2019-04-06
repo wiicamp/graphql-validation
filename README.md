@@ -37,7 +37,7 @@ const { validator, validate } = require('graphql-validation'); // Import module
 
 const resolver = {
   Mutation: {
-    createPost: validator([
+    createPost: validator([ // <--- Validate here
       validate('title').not().isEmpty({ msg: 'Title is required' }),
       validate('content').isLength({ min: 10, max: 20 }),
     ], (parent, args, context, info) => {
@@ -54,11 +54,12 @@ const resolver = {
 };
 ```
 ```javascript
-// console.log(context.validateErrors);
-[
+Input: { title: '', content: 'Hi!' };
+
+Output: [
   { param: 'title', msg: 'Title is required' },
   { param: 'content', msg: 'Invalid value' },
-]
+];
 ```
 
 ### With Input types
@@ -67,7 +68,7 @@ const { validator, validate } = require('graphql-validation'); // Import module
 
 const resolver = {
   Mutation: {
-    createPost: validator([
+    createPost: validator([ // <--- Validate here
       validate('title', 'data').not().isEmpty({ msg: 'Title is required' }), // <-- add name of input in second param
       validate('content').isLength({ min: 10, max: 20 }),
     ], (parent, args, context, info) => {
@@ -82,6 +83,14 @@ const resolver = {
     }),
   },
 };
+```
+```javascript
+Input: { data: { title: '', content: 'Hi!' } };
+
+Output: [
+  { param: 'title', msg: 'Title is required' },
+  { param: 'content', msg: 'Invalid value' },
+];
 ```
 
 ## API
