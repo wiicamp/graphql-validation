@@ -1,4 +1,10 @@
 # graphql-validation
+[![NPM version](https://img.shields.io/npm/v/graphql-validation.svg)](https://img.shields.io/npm/v/graphql-validation.svg)
+[![Minified size](https://img.shields.io/bundlephobia/min/graphql-validation.svg)](https://img.shields.io/bundlephobia/min/graphql-validation.svg)
+[![License: MIT](https://img.shields.io/npm/l/graphql-validation.svg)](https://opensource.org/licenses/MIT)
+[![Dependency Status](https://david-dm.org/havinhthai/graphql-validation.svg)](https://david-dm.org/havinhthai/graphql-validation.svg)
+[![TravisCI](https://travis-ci.org/havinhthai/graphql-validation.svg?branch=master)](https://travis-ci.org/havinhthai/graphql-validation.svg?branch=master)
+
 `graphql-validation` is a GraphQL middleware that wraps [validator.js](https://github.com/chriso/validator.js) validator functions.
 
 ## Table of Contents
