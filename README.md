@@ -41,9 +41,9 @@ const resolver = {
       validate('title').not().isEmpty({ msg: 'Title is required' }),
       validate('content').isLength({ min: 10, max: 20 }),
     ], (parent, args, context, info) => {
-      if (context.validateErrors.length > 0) {
+      if (context.validationErrors) {
         // Validate failed
-        console.log(context.validateErrors); // Do anything with this errors
+        console.log(context.validationErrors); // Do anything with this errors
         
         return;
       }
@@ -56,7 +56,7 @@ const resolver = {
 ```javascript
 Input: { title: '', content: 'Hi!' };
 
-// console.log(context.validateErrors);
+// console.log(context.validationErrors);
 Output: [
   { param: 'title', msg: 'Title is required' },
   { param: 'content', msg: 'Invalid value' },
@@ -73,9 +73,9 @@ const resolver = {
       validate('title', 'data').not().isEmpty({ msg: 'Title is required' }), // <-- add name of input in second param
       validate('content').isLength({ min: 10, max: 20 }),
     ], (parent, args, context, info) => {
-      if (context.validateErrors.length > 0) {
+      if (context.validationErrors) {
         // Validate failed
-        console.log(context.validateErrors); // Do anything with this errors
+        console.log(context.validationErrors); // Do anything with this errors
         
         return;
       }
@@ -88,7 +88,7 @@ const resolver = {
 ```javascript
 Input: { data: { title: '', content: 'Hi!' } };
 
-// console.log(context.validateErrors);
+// console.log(context.validationErrors);
 Output: [
   { param: 'title', msg: 'Title is required' },
   { param: 'content', msg: 'Invalid value' },

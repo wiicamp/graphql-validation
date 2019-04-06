@@ -14,7 +14,7 @@ module.exports = {
 
       if (errors.length > 0) {
         const ctx = context;
-        ctx.validateErrors = errors;
+        ctx.validationErrors = errors;
         errors = [];
       }
 
