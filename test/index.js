@@ -9,9 +9,10 @@ describe('Validator function test', () => {
     const args = { title: '' };
 
     validator([
-      validate('title').not().isEmpty(),
+      validate('title')
+        .not().isEmpty(),
     ], (parent, args, context, info) => {
-      errors = context.validateErrors;
+      errors = context.validationErrors;
     })({}, args, {}, {});
 
     const result = [{ param: 'title', msg: 'Invalid value'}];
@@ -24,9 +25,10 @@ describe('Validator function test', () => {
     const args = { data: { title: '' } };
 
     validator([
-      validate('title', 'data').not().isEmpty(),
+      validate('title', 'data')
+        .not().isEmpty(),
     ], (parent, args, context, info) => {
-      errors = context.validateErrors;
+      errors = context.validationErrors;
     })({}, args, {}, {});
 
     const result = [{ param: 'title', msg: 'Invalid value' }];

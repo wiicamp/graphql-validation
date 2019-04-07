@@ -2,6 +2,7 @@
 const validatorJS = require('validator');
 
 const validatorKeys = Object.keys(validatorJS).filter(key => key.startsWith('is'));
+validatorKeys.push('contains', 'equals', 'matches');
 
 let errors = [];
 
@@ -49,15 +50,15 @@ module.exports = {
     };
 
     validatorKeys.forEach((key) => {
-      obj.methods[key] = function (options = {}) {
+      obj.methods[key] = function (config = {}) {
         const func = (args = {}) => {
-          const validationResult = validatorJS[key](args[param], options);
+          const validationResult = validatorJS[key](args[param], config.options);
           const isError = !obj.isNegateNext ? !validationResult : validationResult;
 
           if (isError) {
             const validationError = {
               param,
-              msg: options.msg || 'Invalid value',
+              msg: config.msg || 'Invalid value',
             };
 
             errors.push(validationError);

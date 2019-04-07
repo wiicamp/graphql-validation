@@ -37,9 +37,14 @@ const { validator, validate } = require('graphql-validation'); // Import module
 
 const resolver = {
   Mutation: {
-    createPost: validator([ // <--- Validate here
-      validate('title').not().isEmpty({ msg: 'Title is required' }),
-      validate('content').isLength({ min: 10, max: 20 }),
+    createPost: validator([ // <--- Validate start here
+      validate('title') // <--- Validate title 
+        .isLength({ msg: 'Title is invalid' options: { min: 3, max: 20 } })
+        .contains({ msg: 'Title must contains "hi"', options: 'hi' })
+        .not()
+        .isEmpty({ msg: 'Title is required' }),
+      validate('content') // <--- Validate content
+        .isLength({ options: { min: 10, max: 20 } }),
     ], (parent, args, context, info) => {
       if (context.validationErrors) {
         // Validate failed
@@ -58,20 +63,36 @@ Input: { title: '', content: 'Hi!' };
 
 // console.log(context.validationErrors);
 Output: [
-  { param: 'title', msg: 'Title is required' },
-  { param: 'content', msg: 'Invalid value' },
+  {
+    param: 'title',
+    msg: 'Title is invalid',
+  },
+  {
+    param: 'title',
+    msg: 'Title must contains \"hi\"',
+  },
+  {
+    param: 'title',
+    msg: 'Title is required',
+  },
+  {
+    param: 'content',
+    msg: 'Invalid value',
+  }
 ];
 ```
 
-### With Input types
+### Validate Input types
 ```javascript
 const { validator, validate } = require('graphql-validation'); // Import module
 
 const resolver = {
   Mutation: {
-    createPost: validator([ // <--- Validate here
-      validate('title', 'data').not().isEmpty({ msg: 'Title is required' }), // <-- add name of input in second param
-      validate('content').isLength({ min: 10, max: 20 }),
+    createPost: validator([
+      validate('title', 'data') // <--- Validate input types
+        .not().isEmpty({ msg: 'Title is required' }), 
+      validate('content') // <--- Just validate args
+        .isLength({ options: { min: 10, max: 20 } }),
     ], (parent, args, context, info) => {
       if (context.validationErrors) {
         // Validate failed
@@ -86,7 +107,7 @@ const resolver = {
 };
 ```
 ```javascript
-Input: { data: { title: '', content: 'Hi!' } };
+Input: { data: { title: '' }, content: 'Hi!' };
 
 // console.log(context.validationErrors);
 Output: [
@@ -111,7 +132,7 @@ Output: [
 #### Validator functions 
 | Args                         | Type                                                            | Default | Description                                                                                                                                                                                                                                              |
 | --------------------------- | --------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `options`                  | `Object` | `{ msg: 'Invalid value' }`  | Option of [validator functions](https://github.com/chriso/validator.js#validators).  
+| `config`                  | `Object { msg: string, options: any }` | `{ msg: 'Invalid value' }`  | `msg`: Custom error message, `options`: options of [validator functions](https://github.com/chriso/validator.js#validators).  
 
 ## License
 `graphql-validation` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
