@@ -62,9 +62,9 @@ module.exports = {
             };
 
             errors.push(validationError);
-
-            obj.isNegateNext = false;
           }
+
+          obj.isNegateNext = false;
         };
 
         obj.callbackFuncs.push(func);
