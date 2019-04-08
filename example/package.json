@@ -1,0 +1,16 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "Simple example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "TuiDev <vinhthai997@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.2.1",
+    "graphql-validation": "*"
+  }
+}
