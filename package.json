@@ -14,9 +14,10 @@
     "graphql",
     "validation",
     "validator",
-    "validate"
+    "validate",
+    "check"
   ],
-  "author": "TuiDev",
+  "author": "TuiDev <vinhthai997@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/havinhthai/graphql-validation/issues"

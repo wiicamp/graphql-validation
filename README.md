@@ -12,6 +12,7 @@
 - [Install](#install)
 - [Usage](#usage)
 - [API](#api)
+- [Contribution](#contribution)
 - [License](#license)
 
 ## Features
@@ -116,6 +117,9 @@ Output: [
 ];
 ```
 
+> To get started with `graphql-validation`, you can refer to this [example](example).
+
+
 ## API
 #### `validator(rules: array, controller: function)`
 | Args                         | Type                                                            | Default | Description                                                                                                                                                                                                                                              |
@@ -133,6 +137,14 @@ Output: [
 | Args                         | Type                                                            | Default | Description                                                                                                                                                                                                                                              |
 | --------------------------- | --------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `config`                  | `Object { msg: string, options: any }` | `{ msg: 'Invalid value' }`  | `msg`: Custom error message, `options`: options of [validator functions](https://github.com/chriso/validator.js#validators).  
+
+## Contribution
+Contribution are always **welcome and recommended**! Here is how:
+
+- Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
+- Clone to your machine `git clone https://github.com/YOUR_USERNAME/graphql-validation.git`
+- Make your changes
+- Create a pull request
 
 ## License
 `graphql-validation` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
