@@ -5,6 +5,7 @@ const validatorKeys = Object.keys(validatorJS).filter(key => key.startsWith('is'
 validatorKeys.push('contains', 'equals', 'matches');
 
 let errors = [];
+const mongoRegexId = /^[a-fA-F0-9]{24}$/;
 
 module.exports = {
   validator(rules, next) {
@@ -33,6 +34,27 @@ module.exports = {
         not() {
           const func = () => {
             obj.isNegateNext = true;
+          };
+
+          obj.callbackFuncs.push(func);
+
+          return this;
+        },
+        mongoId(config = {}) {
+          const func = (args = {}) => {
+            const validationResult = args[param].match(mongoRegexId);
+            const isError = !obj.isNegateNext ? !validationResult : validationResult;
+
+            if (isError) {
+              const validationError = {
+                param,
+                msg: config.msg || 'MongoId is invalid',
+              };
+
+              errors.push(validationError);
+            }
+
+            obj.isNegateNext = false;
           };
 
           obj.callbackFuncs.push(func);

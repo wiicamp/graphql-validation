@@ -39,6 +39,7 @@ const { validator, validate } = require('graphql-validation'); // Import module
 const resolver = {
   Mutation: {
     createPost: validator([ // <--- Validate start here
+      validate('id').mongoId(), // <--- Validate mongoId 
       validate('title') // <--- Validate title 
         .isLength({ msg: 'Title is invalid' options: { min: 3, max: 20 } })
         .contains({ msg: 'Title must contains "hi"', options: 'hi' })
@@ -60,10 +61,14 @@ const resolver = {
 };
 ```
 ```javascript
-Input: { title: '', content: 'Hi!' };
+Input: { id: 'hellomongo', title: '', content: 'Hi!' };
 
 // console.log(context.validationErrors);
 Output: [
+  {
+    param: 'id',
+    msg: 'MongoId is invalid',
+  },
   {
     param: 'title',
     msg: 'Title is invalid',
