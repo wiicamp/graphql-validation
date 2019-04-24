@@ -41,7 +41,7 @@ module.exports = {
           return this;
         },
         mongoId(config = {}) {
-          const func = (args = {}) => {
+          const func = (args = { [param]: '' }) => {
             const validationResult = args[param].match(mongoRegexId);
             const isError = !obj.isNegateNext ? !validationResult : validationResult;
 
@@ -73,7 +73,7 @@ module.exports = {
 
     validatorKeys.forEach((key) => {
       obj.methods[key] = function (config = {}) {
-        const func = (args = {}) => {
+        const func = (args = { [param]: '' }) => {
           const validationResult = validatorJS[key](args[param], config.options);
           const isError = !obj.isNegateNext ? !validationResult : validationResult;
 
