@@ -1,7 +1,7 @@
 <p align="center"><img src="https://s3-ap-southeast-1.amazonaws.com/cdn.tuidev.io/graphql-validation.png" width="150" /></p>
 
 # graphql-validation
-[![NPM version](https://img.shields.io/npm/v/graphql-validation.svg)](https://img.shields.io/npm/v/graphql-validation.svg)
+[![NPM version](https://img.shields.io/npm/v/graphql-validation.svg)](https://www.npmjs.com/package/graphql-validation)
 [![Minified size](https://img.shields.io/bundlephobia/min/graphql-validation.svg)](https://img.shields.io/bundlephobia/min/graphql-validation.svg)
 [![License: MIT](https://img.shields.io/npm/l/graphql-validation.svg)](https://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/havinhthai/graphql-validation.svg)](https://david-dm.org/havinhthai/graphql-validation.svg)
