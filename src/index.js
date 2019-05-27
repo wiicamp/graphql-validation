@@ -5,7 +5,6 @@ const validatorKeys = Object.keys(validatorJS).filter(key => key.startsWith('is'
 validatorKeys.push('contains', 'equals', 'matches');
 
 let errors = [];
-const mongoRegexId = /^[a-fA-F0-9]{24}$/;
 
 module.exports = {
   validator(rules, next) {
@@ -40,27 +39,6 @@ module.exports = {
 
           return this;
         },
-        mongoId(config = {}) {
-          const func = (args = { [param]: '' }) => {
-            const validationResult = args[param].match(mongoRegexId);
-            const isError = !obj.isNegateNext ? !validationResult : validationResult;
-
-            if (isError) {
-              const validationError = {
-                param,
-                msg: config.msg || 'MongoId is invalid',
-              };
-
-              errors.push(validationError);
-            }
-
-            obj.isNegateNext = false;
-          };
-
-          obj.callbackFuncs.push(func);
-
-          return this;
-        },
         exec(args) {
           const params = input ? args[input] : args;
 
@@ -74,7 +52,7 @@ module.exports = {
     validatorKeys.forEach((key) => {
       obj.methods[key] = function (config = {}) {
         const func = (args = { [param]: '' }) => {
-          const validationResult = validatorJS[key](args[param], config.options);
+          const validationResult = validatorJS[key](`${args[param]}`, config.options);
           const isError = !obj.isNegateNext ? !validationResult : validationResult;
 
           if (isError) {

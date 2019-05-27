@@ -1,3 +1,5 @@
+<p align="center"><img src="https://s3-ap-southeast-1.amazonaws.com/cdn.tuidev.io/graphql-validation.png" width="150" /></p>
+
 # graphql-validation
 [![NPM version](https://img.shields.io/npm/v/graphql-validation.svg)](https://img.shields.io/npm/v/graphql-validation.svg)
 [![Minified size](https://img.shields.io/bundlephobia/min/graphql-validation.svg)](https://img.shields.io/bundlephobia/min/graphql-validation.svg)
@@ -24,13 +26,12 @@
 
 ## Install
 ```sh
-npm i --save graphql-validation
+yarn add graphql-validation
 ```
 or
 ```sh
-yarn add graphql-validation
+npm i --save graphql-validation
 ```
-
 ## Usage
 ### Basic 
 ```javascript
@@ -39,12 +40,11 @@ const { validator, validate } = require('graphql-validation'); // Import module
 const resolver = {
   Mutation: {
     createPost: validator([ // <--- Validate start here
-      validate('id').mongoId(), // <--- Validate mongoId 
+      validate('id').isMongoId(),
       validate('title') // <--- Validate title 
         .isLength({ msg: 'Title is invalid' options: { min: 3, max: 20 } })
         .contains({ msg: 'Title must contains "hi"', options: 'hi' })
-        .not()
-        .isEmpty({ msg: 'Title is required' }),
+        .not().isEmpty({ msg: 'Title is required' }),
       validate('content') // <--- Validate content
         .isLength({ options: { min: 10, max: 20 } }),
     ], (parent, args, context, info) => {
