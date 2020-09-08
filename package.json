@@ -1,6 +1,6 @@
 {
   "name": "@wiicamp/graphql-validation",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "An GraphQL middleware for validator.js.",
   "main": "src/index.js",
   "scripts": {

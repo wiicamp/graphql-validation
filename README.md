@@ -2,9 +2,9 @@
 
 # @wiicamp/graphql-validation
 [![NPM version](https://img.shields.io/npm/v/graphql-validation.svg)](https://www.npmjs.com/package/@wiicamp/graphql-validation)
-[![Minified size](https://img.shields.io/github/repo-size/wiicamp/graphql-validation)](https://www.npmjs.com/package/@wiicamp/graphql-merge-resolvers)
-[![License: MIT](https://img.shields.io/github/license/wiicamp/graphql-validation)](https://opensource.org/licenses/MIT)
-[![Dependency Status](https://img.shields.io/david/wiicamp/graphql-validation)](https://www.npmjs.com/package/@wiicamp/graphql-merge-resolvers)
+[![Minified size](https://img.shields.io/github/repo-size/wiicamp/graphql-validation)](https://www.npmjs.com/package/@wiicamp/graphql-validation)
+[![License: MIT](https://img.shields.io/github/license/wiicamp/graphql-validation)](https://github.com/wiicamp/graphql-validation/blob/master/LICENSE)
+[![Dependency Status](https://img.shields.io/david/wiicamp/graphql-validation)](https://www.npmjs.com/package/@wiicamp/graphql-validation)
 
 `@wiicamp/graphql-validation` is a GraphQL middleware that wraps [validator.js](https://github.com/chriso/validator.js) validator functions.
 
