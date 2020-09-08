@@ -1,5 +1,5 @@
 {
-  "name": "graphql-validation",
+  "name": "@wiicamp/graphql-validation",
   "version": "2.2.2",
   "description": "An GraphQL middleware for validator.js.",
   "main": "src/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/havinhthai/graphql-validation.git"
+    "url": "git+https://github.com/wiicamp/graphql-validation.git"
   },
   "keywords": [
     "graphql",
@@ -17,23 +17,23 @@
     "validate",
     "check"
   ],
-  "author": "TuiDev <vinhthai997@gmail.com>",
+  "author": "Thai Ha <vinhthai997@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/havinhthai/graphql-validation/issues"
+    "url": "https://github.com/wiicamp/graphql-validation/issues"
   },
-  "homepage": "https://github.com/havinhthai/graphql-validation#readme",
+  "homepage": "https://github.com/wiicamp/graphql-validation#readme",
   "dependencies": {
-    "validator": "^11.0.0"
+    "validator": "^13.1.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0",
-    "mocha": "^6.1.4"
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "mocha": "^8.1.3"
   }
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "TuiDev <vinhthai997@gmail.com>",
+  "author": "Thai Ha <vinhthai997@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.4.8",

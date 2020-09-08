@@ -1,13 +1,13 @@
 <p align="center"><img src="https://s3-ap-southeast-1.amazonaws.com/cdn.tuidev.io/graphql-validation.png" width="150" /></p>
 
-# graphql-validation
+# @wiicamp/graphql-validation
 [![NPM version](https://img.shields.io/npm/v/graphql-validation.svg)](https://www.npmjs.com/package/graphql-validation)
 [![Minified size](https://img.shields.io/bundlephobia/min/graphql-validation.svg)](https://img.shields.io/bundlephobia/min/graphql-validation.svg)
 [![License: MIT](https://img.shields.io/npm/l/graphql-validation.svg)](https://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/havinhthai/graphql-validation.svg)](https://david-dm.org/havinhthai/graphql-validation.svg)
 [![TravisCI](https://travis-ci.org/havinhthai/graphql-validation.svg?branch=master)](https://travis-ci.org/havinhthai/graphql-validation.svg?branch=master)
 
-`graphql-validation` is a GraphQL middleware that wraps [validator.js](https://github.com/chriso/validator.js) validator functions.
+`@wiicamp/graphql-validation` is a GraphQL middleware that wraps [validator.js](https://github.com/chriso/validator.js) validator functions.
 
 ## Table of Contents
 - [Features](#features)
@@ -26,16 +26,16 @@
 
 ## Install
 ```sh
-yarn add graphql-validation
+yarn add @wiicamp/graphql-validation
 ```
 or
 ```sh
-npm i --save graphql-validation
+npm i --save @wiicamp/graphql-validation
 ```
 ## Usage
 ### Basic 
 ```javascript
-const { validator, validate } = require('graphql-validation'); // Import module
+const { validator, validate } = require('@wiicamp/graphql-validation'); // Import module
 
 const resolver = {
   Mutation: {
@@ -90,7 +90,7 @@ Output: [
 
 ### Validate Input types
 ```javascript
-const { validator, validate } = require('graphql-validation'); // Import module
+const { validator, validate } = require('@wiicamp/graphql-validation'); // Import module
 
 const resolver = {
   Mutation: {
@@ -122,7 +122,7 @@ Output: [
 ];
 ```
 
-> To get started with `graphql-validation`, you can refer to this [example](example).
+> To get started with `@wiicamp/graphql-validation`, you can refer to this [example](example).
 
 
 ## API
@@ -152,6 +152,6 @@ Contribution are always **welcome and recommended**! Here is how:
 - Create a pull request
 
 ## License
-`graphql-validation` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
+`@wiicamp/graphql-validation` is released under the MIT license. See [LICENSE](./LICENSE) for details.  
   
 Any question or support will welcome.
