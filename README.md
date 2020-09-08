@@ -1,11 +1,10 @@
 <p align="center"><img src="https://s3-ap-southeast-1.amazonaws.com/cdn.tuidev.io/graphql-validation.png" width="150" /></p>
 
 # @wiicamp/graphql-validation
-[![NPM version](https://img.shields.io/npm/v/graphql-validation.svg)](https://www.npmjs.com/package/graphql-validation)
-[![Minified size](https://img.shields.io/bundlephobia/min/graphql-validation.svg)](https://img.shields.io/bundlephobia/min/graphql-validation.svg)
-[![License: MIT](https://img.shields.io/npm/l/graphql-validation.svg)](https://opensource.org/licenses/MIT)
-[![Dependency Status](https://david-dm.org/havinhthai/graphql-validation.svg)](https://david-dm.org/havinhthai/graphql-validation.svg)
-[![TravisCI](https://travis-ci.org/havinhthai/graphql-validation.svg?branch=master)](https://travis-ci.org/havinhthai/graphql-validation.svg?branch=master)
+[![NPM version](https://img.shields.io/npm/v/graphql-validation.svg)](https://www.npmjs.com/package/@wiicamp/graphql-validation)
+[![Minified size](https://img.shields.io/github/repo-size/wiicamp/graphql-validation)](https://www.npmjs.com/package/@wiicamp/graphql-merge-resolvers)
+[![License: MIT](https://img.shields.io/github/license/wiicamp/graphql-validation)](https://opensource.org/licenses/MIT)
+[![Dependency Status](https://img.shields.io/david/wiicamp/graphql-validation)](https://www.npmjs.com/package/@wiicamp/graphql-merge-resolvers)
 
 `@wiicamp/graphql-validation` is a GraphQL middleware that wraps [validator.js](https://github.com/chriso/validator.js) validator functions.
 
