@@ -4,7 +4,7 @@ const validatorJS = require('validator');
 const validatorKeys = Object.keys(validatorJS).filter(key => key.startsWith('is'));
 validatorKeys.push('contains', 'equals', 'matches');
 
-let errors = [];
+let errors = {};
 
 module.exports = {
   validator(rules, next) {
@@ -13,10 +13,10 @@ module.exports = {
         func.exec(args);
       });
 
-      if (errors.length > 0) {
+      if (errors.hasError) {
         const ctx = context;
         ctx.validationErrors = errors;
-        errors = [];
+        errors = {};
       }
 
       return next(parent, args, context, info);
@@ -56,12 +56,14 @@ module.exports = {
           const isError = !obj.isNegateNext ? !validationResult : validationResult;
 
           if (isError) {
-            const validationError = {
-              param,
-              msg: config.msg || 'Invalid value',
-            };
-
-            errors.push(validationError);
+            const msg = config.msg || 'Invalid value'
+            if (errors[param]) {
+              errors[param].push(msg)
+            }
+            else {
+              errors[param] = [msg];
+            }
+            errors.hasError = true;
           }
 
           obj.isNegateNext = false;
